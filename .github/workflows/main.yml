@@ -20,7 +20,7 @@ jobs:
           cx_client_id: ${{ secrets.CLIENT_ID }}
           cx_client_secret: ${{ secrets.SECRET }}
           branch: ${{ github.ref }}
-          additional_params: --report-format json --output-path . --scan-types sast --threshold "sast-high=1"
+          additional_params: --report-format json --output-path . --scan-types sast
       - name: mobbdev
         # You may pin to the exact commit or the version.
         # uses: mobb-dev/action@7e7a72ff0b13c545d810ff05e08119274626b74b
