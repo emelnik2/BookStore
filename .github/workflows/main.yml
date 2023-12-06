@@ -20,3 +20,15 @@ jobs:
           cx_client_id: ${{ secrets.CLIENT_ID }}
           cx_client_secret: ${{ secrets.SECRET }}
           branch: ${{ github.ref }}
+      - name: mobbdev
+        # You may pin to the exact commit or the version.
+        # uses: mobb-dev/action@7e7a72ff0b13c545d810ff05e08119274626b74b
+        uses: mobb-dev/action@v1
+        with:
+          # Path to SAST report file
+          report-file: "cx_result.json"
+          # Mobb API key
+          api-key: ${{ secrets.MOBB_KEY }}
+          # GitaHub Token
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          
