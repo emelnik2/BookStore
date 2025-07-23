@@ -29,7 +29,6 @@ jobs:
           scanners: sast
           bug_tracker: Sarif
           extra_certificates: certificate
-          cx_client_params: '--insecure'
       - name: Upload SARIF
         if: success()
         uses: github/codeql-action/upload-sarif@v2
