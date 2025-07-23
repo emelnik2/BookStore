@@ -14,7 +14,6 @@ jobs:
         uses: checkmarx-ts/checkmarx-cxflow-github-action@v2.3
         with:
           checkmarx_url: '${{ secrets.CX_SERVER_URL }}'
-          checkmarx.version: '9.1'
           checkmarx_username: '${{ secrets.CX_USERNAME }}'
           checkmarx_password: '${{ secrets.CX_PASSWORD }}'
       - name: Upload SARIF
