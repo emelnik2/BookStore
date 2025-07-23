@@ -26,9 +26,9 @@ jobs:
           checkmarx_username: '${{ secrets.CX_USERNAME }}'
           checkmarx_password: '${{ secrets.CX_PASSWORD }}'
           checkmarx_client_secret: '${{ secrets.CHECKMARX_CLIENT_SECRET }}'
-          cx_client_params: '--insecure'
-          NODE_TLS_REJECT_UNAUTHORIZED: '0'
           scanners: sast
+          bug_tracker: Sarif
+          extra_certificates: certificate
       - name: Upload SARIF
         if: success()
         uses: github/codeql-action/upload-sarif@v2
