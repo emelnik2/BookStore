@@ -26,6 +26,7 @@ jobs:
           checkmarx_username: '${{ secrets.CX_USERNAME }}'
           checkmarx_password: '${{ secrets.CX_PASSWORD }}'
           checkmarx_client_secret: '${{ secrets.CHECKMARX_CLIENT_SECRET }}'
+          cx_client_params: '--insecure'
           scanners: sast
       - name: Upload SARIF
         if: success()
