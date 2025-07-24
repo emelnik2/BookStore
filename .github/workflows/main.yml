@@ -32,9 +32,7 @@ jobs:
           bug_tracker: Sarif
           extra_certificates: certificate
           output_format: 'sarif'
-          additional_params: --report-format sarif --output-path .         
       - name: Upload SARIF
-        if: success()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: cx_result.sarif
+          sarif_file: cx.sarif
