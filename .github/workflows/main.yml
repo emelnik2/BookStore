@@ -31,6 +31,10 @@ jobs:
           scanners: sast
           bug_tracker: Sarif
           extra_certificates: certificate
+          output_format: 'sarif'
+          output_directory: 'results'          
       - name: Upload SARIF
         if: success()
         uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results/cx.sarif
