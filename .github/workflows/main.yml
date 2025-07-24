@@ -13,6 +13,8 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    env:
+      CHECKMARX_SCAN_QUEUING: "true"
     steps:
       - uses: actions/checkout@v3
       - name: Checkmarx CxFlow Action
@@ -29,7 +31,6 @@ jobs:
           scanners: sast
           bug_tracker: Sarif
           extra_certificates: certificate
-          CHECKMARX_SCAN_QUEUING: "true"
       - name: Upload SARIF
         if: success()
         uses: github/codeql-action/upload-sarif@v3
