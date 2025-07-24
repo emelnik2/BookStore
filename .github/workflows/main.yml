@@ -32,7 +32,7 @@ jobs:
           bug_tracker: Sarif
           extra_certificates: certificate
           output_format: 'sarif'
-          output_directory: 'results'          
+          output_directory: './results'         
       - name: Upload SARIF
         if: success()
         uses: github/codeql-action/upload-sarif@v3
